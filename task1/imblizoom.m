@@ -45,6 +45,9 @@ for i = 1:new_height
 end
 new_img = uint8(new_img);
 figure,imshow(new_img);
+title(['缩放比例为',num2str(scale),'的图'])
+figure,imshow(origin);
+title("原图");
 end
 
 
