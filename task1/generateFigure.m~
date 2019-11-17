@@ -8,4 +8,3 @@ hold on
 plot(x,y1,'-g')
 plot(x,y2,'-b')
 set(gcf,'position',[0,0,imgW,imgH]);
-saveas(gcf,'figure.png')  
