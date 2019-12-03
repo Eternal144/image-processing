@@ -1,6 +1,7 @@
 
-function [newGrayPic]= edge()
+function [newGrayPic]= edge1()
 sourcePic=imread('house.jpg');
+sourcePic = rgb2gray(sourcePic);
 grayPic=mat2gray(sourcePic);
 [m,n]=size(grayPic);
 newGrayPic=grayPic;
@@ -16,5 +17,10 @@ for j=2:m-1 %进行边界提取
         end
     end
 end
-figure,imshow(newGrayPic);
+figure,
+subplot(1,2,1);
+imshow(sourcePic);
+title('原图');
+subplot(1,2,2);
+imshow(newGrayPic);
 title('Prewitt算子的处理结果')
