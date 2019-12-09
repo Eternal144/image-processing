@@ -3,7 +3,7 @@ img_gray = linem();
 % figure,
 subplot(2,2,1); imshow(img_gray); title('Ô­Í¼');
 % the canny edge of image
-BW = edge(img_gray,'canny',[0.1,0.5],0.9);
+BW = edge(img_gray,'canny',[0,high],1);
 subplot(2,2,2), imshow(BW), title('Í¼Ïñ±ßÔµ');
 
 % the theta and rho of transformed space

@@ -1,11 +1,12 @@
-function [ Hough, theta_range, rho_range ] = hough1(I)
+function [ Hough, theta_range, rho_range ] = hough1()
 %NAIVEHOUGH Peforms the Hough transform in a straightforward way.
 %
-ff = imread('house.jpg');
+ff = imread('line.jpg');
 I = rgb2gray(ff);
 % I=edge(ff,'Canny',0.2);
 % figure,
 % imshow(I);
+
 [rows, cols] = size(I);
 theta_maximum = 90;
 rho_maximum = floor(sqrt(rows^2 + cols^ 2)) - 1;
@@ -28,7 +29,6 @@ for row = 1:rows
     end
 end
 figure,
-% subplot(1,1,1);
 imshow(Hough,[],'XData',theta_range,'YData',rho_range,'InitialMagnification','fit'),...
     title('转换后的霍夫空间')
 xlabel('\theta'), ylabel('\rho');

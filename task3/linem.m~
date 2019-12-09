@@ -1,0 +1,25 @@
+% 用高斯分布生成一条直线。
+function [x,y,min_v,max_v] = linem
+n = 120;
+% 直线为y = ax+b;
+a = 2.8;
+b = 5;
+
+mu=-1;
+sigma=100;
+x = zeros(0,n);
+y = normrnd(mu,sigma,[1 120])
+
+for i = 1 : 100
+    x(i) = (y(i)-b)/a
+end
+max_v = max(x);
+min_v = min(x);
+s = rand(1,20);
+% 随机加如20个离群点。
+for i = 1 : 20
+    x(100+i) = min_v + (max_v - min_v)*s(i)
+end
+
+% scatter(x,y,'.','LineWidth',1);
+% scatter(x,y,'r*')
